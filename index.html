@@ -871,6 +871,453 @@
       transform: translateY(0);
     }
 
+    /* ── ANTES/DEPOIS ── */
+    #transformation {
+      background: var(--ink);
+      padding: 100px 0;
+    }
+
+    .transformation-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .transformation-header h2 {
+      font-size: clamp(34px, 4.5vw, 52px);
+      margin-top: 16px;
+    }
+
+    .transformation-cols {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .trans-col {
+      padding: 56px 48px;
+    }
+
+    .trans-col.before {
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .trans-col.after {
+      background: var(--slate);
+      border: 1px solid rgba(184, 151, 90, 0.15);
+      position: relative;
+    }
+
+    .trans-col.after::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .trans-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      background: transparent;
+      position: relative;
+    }
+
+    .trans-arrow-inner {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(184, 151, 90, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 18px;
+      background: var(--ink);
+      z-index: 1;
+      position: relative;
+    }
+
+    .trans-arrow::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(184, 151, 90, 0.2), transparent);
+    }
+
+    .trans-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trans-label.before-label {
+      color: var(--silver);
+    }
+
+    .trans-label.after-label {
+      color: var(--gold);
+    }
+
+    .trans-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+    }
+
+    .trans-label.before-label::before {
+      background: var(--silver);
+    }
+
+    .trans-label.after-label::before {
+      background: var(--gold);
+    }
+
+    .trans-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .trans-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .trans-item.before-item {
+      color: var(--silver);
+    }
+
+    .trans-item.after-item {
+      color: var(--cream);
+    }
+
+    .trans-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .before-item .trans-dot {
+      background: rgba(138, 151, 168, 0.4);
+    }
+
+    .after-item .trans-dot {
+      background: var(--gold);
+    }
+
+    /* ── DOR EXPANDIDA ── */
+    .dor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      margin-top: 0;
+    }
+
+    .dor-note {
+      background: var(--navy);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-left: 2px solid rgba(184, 151, 90, 0.3);
+      padding: 32px 36px;
+      margin-top: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--fog);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── PROBLEMA (por que outras soluções falham) ── */
+    #problema {
+      background: var(--ink);
+      padding: 100px 0;
+    }
+
+    .problema-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .problema-header h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .problema-header p {
+      font-size: 15px;
+      color: var(--silver);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .problema-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 48px;
+    }
+
+    .problema-card {
+      background: var(--navy);
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .problema-card::after {
+      content: attr(data-label);
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--silver);
+      opacity: 0.5;
+    }
+
+    .problema-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+      margin-top: 8px;
+    }
+
+    .problema-card p {
+      font-size: 14px;
+      color: var(--silver);
+      line-height: 1.85;
+    }
+
+    .problema-conclusion {
+      background: var(--navy);
+      border-top: 2px solid var(--gold);
+      padding: 40px 48px;
+      text-align: center;
+    }
+
+    .problema-conclusion p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--fog);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .problema-conclusion strong {
+      color: var(--cream);
+      font-style: normal;
+    }
+
+    /* ── PARA QUEM É ── */
+    #paraquem {
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 100px 0;
+    }
+
+    .paraquem-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .paraquem-header h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      margin-top: 16px;
+    }
+
+    .paraquem-cols {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0 48px;
+      align-items: start;
+    }
+
+    .paraquem-sep {
+      background: rgba(255, 255, 255, 0.06);
+      align-self: stretch;
+    }
+
+    .paraquem-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+
+    .paraquem-block h3.sim {
+      color: var(--gold);
+    }
+
+    .paraquem-block h3.nao {
+      color: var(--silver);
+    }
+
+    .paraquem-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .paraquem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .paraquem-item.sim {
+      color: var(--fog);
+    }
+
+    .paraquem-item.nao {
+      color: var(--silver);
+      opacity: 0.7;
+    }
+
+    .pq-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pq-icon.sim {
+      color: var(--gold);
+    }
+
+    .pq-icon.nao {
+      color: var(--silver);
+      opacity: 0.5;
+    }
+
+    /* ── PROVAS / DIFERENCIAIS ── */
+    #provas {
+      background: var(--ink);
+      padding: 100px 0;
+    }
+
+    .provas-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .provas-header h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      margin-top: 16px;
+    }
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+
+    .metric-card {
+      background: var(--navy);
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .metric-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-number sup {
+      font-size: 0.45em;
+      vertical-align: super;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--silver);
+      line-height: 1.6;
+      max-width: 120px;
+      margin: 0 auto;
+    }
+
+    .diferenciais-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .diferencial-card {
+      background: var(--slate);
+      padding: 36px 32px;
+      border-left: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .diferencial-card:hover {
+      border-left-color: var(--gold);
+    }
+
+    .dif-icon {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .diferencial-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .diferencial-card p {
+      font-size: 13px;
+      color: var(--silver);
+      line-height: 1.8;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav {
@@ -917,6 +1364,39 @@
         justify-content: center;
         text-align: center;
       }
+
+      .transformation-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .trans-arrow {
+        display: none;
+      }
+
+      .trans-col {
+        padding: 40px 28px;
+      }
+
+      .problema-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .paraquem-cols {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .paraquem-sep {
+        display: none;
+      }
+
+      .metrics-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .diferenciais-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -953,48 +1433,88 @@
 
   <div class="divider"></div>
 
+  <!-- ══ ANTES / DEPOIS ═══════════════════════════ -->
+  <section id="transformation">
+    <div class="container-wide">
+      <div class="transformation-header reveal">
+        <p class="eyebrow">A transformação</p>
+        <h2 class="display">Você entra de um jeito.<br><em>Sai de outro.</em></h2>
+      </div>
+      <div class="transformation-cols reveal">
+        <div class="trans-col before">
+          <div class="trans-label before-label">Como você chega</div>
+          <ul class="trans-items">
+            <li class="trans-item before-item"><span class="trans-dot"></span>Exausto, sem energia para o que importa
+            </li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Confuso, muitas vozes, nenhuma direção
+            </li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Sem gestão, time à deriva, você resolvendo
+              tudo</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Endividado de decisões adiadas</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Desmotivado, mesmo com resultados</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Sem plano real, só urgências</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Sem estratégia, agindo por instinto</li>
+          </ul>
+        </div>
+        <div class="trans-arrow">
+          <div class="trans-arrow-inner">→</div>
+        </div>
+        <div class="trans-col after">
+          <div class="trans-label after-label">Como você sai</div>
+          <ul class="trans-items">
+            <li class="trans-item after-item"><span class="trans-dot"></span>Seguro, com uma bússola interna clara</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Com clareza, sabe quem é e para onde vai
+            </li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Com estratégia, estrutura que sustenta
+              crescimento</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Metas definidas e alcançáveis no horizonte
+            </li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Liderança que inspira</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ SYMPTOMS ══════════════════════════════════ -->
   <section id="symptoms">
     <div class="container-wide">
       <div class="symptoms-intro reveal">
-        <p class="eyebrow">Você se reconhece aqui?</p>
+        <p class="eyebrow">A dor que poucos nomeiam</p>
         <h2 class="display">Quando a mente está<br><em>prestes a pifar</em></h2>
-        <p>Não é fraqueza. É o custo de carregar tudo sem nenhum lugar para colocar.</p>
+        <p>Raramente aparece como "desconexão". Aparece como cansaço, conflito, procrastinação ou simplesmente sensação
+          de vazio.</p>
       </div>
       <div class="symptoms-grid">
         <div class="symptom-card reveal">
           <div class="symptom-number">01</div>
-          <h3>Excesso de inputs, zero síntese</h3>
-          <p>E-mails, decisões, reuniões, ideias, alertas. Você absorve tudo e processa quase nada. O acúmulo começa a
-            pesar.</p>
+          <h3>Algo está errado mas você não sabe nomear</h3>
+          <p>A sensação existe. Só não tem palavra. E sem nome, não tem saída.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">02</div>
-          <h3>Clareza que some quando você mais precisa</h3>
-          <p>Você sabe o que fazer, mas na hora H, a neblina aparece. Você age por inércia ou por ansiedade, não por
-            direção.</p>
+          <h3>Agenda cheia, direção zero</h3>
+          <p>Foco que some quando você mais precisa. Você age por inércia não por escolha.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">03</div>
-          <h3>A sensação de não ter chegado a lugar nenhum</h3>
-          <p>Ocupado o tempo todo, avançando em tudo ao mesmo tempo — e ao fim do dia, a pergunta silenciosa: pra quê?
-          </p>
+          <h3>Impulsos que sabotam</h3>
+          <p>Reações que comprometem relações e decisões. Você sabe que não deveria e repete.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">04</div>
-          <h3>Relacionamentos que pagam a conta</h3>
-          <p>Quem está perto de você recebe o que sobra. E o que sobra, ultimamente, não tem sido muito.</p>
+          <h3>Ansiedade como modo padrão</h3>
+          <p>Excesso de pensamentos, dificuldade de silenciar. O barulho interno nunca para.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">05</div>
-          <h3>O silêncio virou incômodo</h3>
-          <p>Você não consegue mais ficar parado sem preencher o espaço. O vazio dói mais do que o barulho.</p>
+          <h3>Distância de si mesmo</h3>
+          <p>Você não reconhece quem é fora do papel que representa. O vazio dói.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">06</div>
-          <h3>Sucesso por fora, vazio por dentro</h3>
-          <p>Os números batem. A reputação está sólida. Mas algo fundamental está fora do lugar e você sente isso
-            todos os dias.</p>
+          <h3>Muito esforço, pouca transformação</h3>
+          <p>Estagnação disfarçada de movimento. Os números batem. Mas algo essencial está fora do lugar.</p>
         </div>
       </div>
     </div>
@@ -1003,12 +1523,45 @@
   <!-- ══ QUOTE BREAK ══════════════════════════════ -->
   <div class="quote-break">
     <div class="container">
-      <blockquote class="reveal">
+      <blockquote class="reveal" style="color: var(--gold-light);">
         "Clareza não é ausência de complexidade.<br>É saber o que fazer com ela."
       </blockquote>
       <cite class="reveal">— Premissa da Clareza Radical</cite>
     </div>
   </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ PROBLEMA ════════════════════════════════ -->
+  <section id="problema">
+    <div class="container-wide">
+      <div class="problema-header reveal">
+        <p class="eyebrow">Por que outras soluções não funcionaram</p>
+        <h2 class="display">A maioria investe em mudar<br><em>o que faz.</em> Não o que é.</h2>
+        <p>Cada solução toca em uma parte do problema.</p>
+      </div>
+      <div class="problema-grid">
+        <div class="problema-card reveal" data-label="01">
+          <h3>Cursos e conteúdos</h3>
+          <p>Informação sem aplicação. Você aprende, consume, esquece. Falta acompanhamento do processo real e alguém
+            que veja você.</p>
+        </div>
+        <div class="problema-card reveal" data-label="02">
+          <h3>Terapia tradicional</h3>
+          <p>Foco no passado e no diagnóstico. Não gera, necessariamente, clareza de direção ou capacidade de agir
+            diferente no presente.</p>
+        </div>
+        <div class="problema-card reveal" data-label="03">
+          <h3>Coaching executivo</h3>
+          <p>Metas e performance em primeiro plano. Não toca as camadas emocionais e identitárias que, na prática,
+            travam o avanço real.</p>
+        </div>
+      </div>
+      <div class="problema-conclusion reveal">
+        <p>Nós invertemos essa lógica. <strong>Quem você é vem antes do que você faz.</strong></p>
+      </div>
+    </div>
+  </section>
 
   <!-- ══ MENTOR ══════════════════════════════════ -->
   <section id="mentor">
@@ -1087,9 +1640,97 @@
         </div>
         <div class="method-sep"></div>
         <div class="method-desc">
-          <strong>Cada sessão tem intenção e estrutura — mas não roteiro.</strong> O que surge é genuíno, e é a partir
+          <strong>Cada sessão tem intenção e estrutura mas não roteiro padrão.</strong> O que surge é genuíno, e é a
+          partir
           do genuíno que o trabalho real começa. Você recebe preparação prévia para cada encontro e síntese escrita ao
           final. O processo é individual, sigiloso e sem nenhuma agenda além da sua clareza.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PARA QUEM É ══════════════════════════════ -->
+  <section id="paraquem">
+    <div class="container-wide">
+      <div class="paraquem-header reveal">
+        <p class="eyebrow">Fit</p>
+        <h2 class="display">Este processo é para você?</em></h2>
+      </div>
+      <div class="paraquem-cols">
+        <div class="paraquem-block reveal">
+          <h3 class="display sim">É para você se...</h3>
+          <ul class="paraquem-list">
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Sente que está vivendo no piloto automático
+            </li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Tem dificuldade de decidir com clareza e
+              confiança</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Sabe que precisa mudar, mas não sabe por
+              onde começar</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Já tentou outras soluções e ainda sente que
+              falta algo</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Quer transformação real, não só inspiração
+              momentânea</li>
+          </ul>
+        </div>
+        <div class="paraquem-sep"></div>
+        <div class="paraquem-block reveal">
+          <h3 class="display nao">Não é para você se...</h3>
+          <ul class="paraquem-list">
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Busca técnicas rápidas sem comprometimento
+              com o processo</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Não está disposto a olhar honestamente para
+              si mesmo</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Quer respostas prontas em vez de construir
+              as suas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROVAS / DIFERENCIAIS ════════════════════ -->
+  <section id="provas">
+    <div class="container-wide">
+      <div class="provas-header reveal">
+        <p class="eyebrow">Resultados reais</p>
+        <h2 class="display">O que os dados<br><em>confirmam</em></h2>
+      </div>
+      <div class="metrics-row reveal">
+        <div class="metric-card">
+          <div class="metric-number">97</sup></div>
+          <div class="metric-label">NPS</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100%</sup></div>
+          <div class="metric-label">Recomendariam a mentoria a alguém próximo</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100%</sup></div>
+          <div class="metric-label">Avaliaram o mentor como "Excelente" em clareza e escuta</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">100%</sup></div>
+          <div class="metric-label">Conseguiram aplicar o processo na rotina</div>
+        </div>
+      </div>
+      <div class="diferenciais-row reveal">
+        <div class="diferencial-card">
+          <div class="dif-icon">01</div>
+          <h4>Resultado duradouro</h4>
+          <p>Mentorados relatam mudanças que continuam meses após o encerramento. Não é efeito passageiro nem motivação
+            de curto prazo.</p>
+        </div>
+        <div class="diferencial-card">
+          <div class="dif-icon">02</div>
+          <h4>Holístico e prático</h4>
+          <p>Integra o emocional, o identitário e o existencial sem perder o foco em resultados concretos. Interior e
+            exterior andam juntos.</p>
+        </div>
+        <div class="diferencial-card">
+          <div class="dif-icon">03</div>
+          <h4>Boca a boca ativo</h4>
+          <p>Todos os participantes já indicaram a mentoria espontaneamente antes mesmo de serem solicitados a dar
+            qualquer feedback.</p>
         </div>
       </div>
     </div>
