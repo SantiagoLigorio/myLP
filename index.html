@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clareza Radical — Mentoria</title>
+  <title>FLUXUS — Mentoria Individual</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -295,9 +295,9 @@
     }
 
     .symptom-card p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--silver);
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     /* ── QUOTE BREAK ── */
@@ -437,39 +437,58 @@
 
     .phase {
       background: var(--navy);
-      padding: 48px 36px;
+      padding: 52px 40px;
       position: relative;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      transition: border-top-color 0.3s ease;
     }
 
-    .phase-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
+    .phase:hover {
+      border-top-color: var(--gold);
+    }
+
+    .phase-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: rgba(184, 151, 90, 0.12);
+      line-height: 1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+      transition: color 0.3s ease;
+    }
+
+    .phase:hover .phase-num {
+      color: rgba(184, 151, 90, 0.22);
     }
 
     .phase h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 400;
+      font-size: 32px;
+      font-weight: 500;
       margin-bottom: 16px;
       color: var(--cream);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
     }
 
     .phase p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--silver);
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     .phase-sessions {
-      font-size: 12px;
-      color: rgba(184, 151, 90, 0.7);
-      margin-top: 20px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      display: inline-block;
+      font-size: 11px;
+      color: var(--gold);
+      margin-top: 28px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(184, 151, 90, 0.25);
+      padding-top: 16px;
+      width: 100%;
     }
 
     .method-detail {
@@ -619,77 +638,133 @@
       line-height: 1.85;
     }
 
-    .offer-card {
-      background: var(--navy);
-      border: 1px solid rgba(184, 151, 90, 0.2);
-      padding: 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* ── OFFER REDESIGN ── */
+    .offer-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 2px;
     }
 
-    .offer-card::before {
+    .offer-process-card {
+      background: var(--navy);
+      padding: 48px 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      transition: border-top-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .offer-process-card:hover {
+      border-top-color: var(--gold);
+    }
+
+    .offer-process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 88px;
+      font-weight: 300;
+      color: rgba(184, 151, 90, 0.1);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      transition: color 0.3s ease;
+    }
+
+    .offer-process-card:hover .offer-process-num {
+      color: rgba(184, 151, 90, 0.2);
+    }
+
+    .offer-process-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .offer-process-body {
+      font-size: 15px;
+      color: var(--silver);
+      line-height: 1.9;
+      flex: 1;
+    }
+
+    .offer-process-tag {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-top: 1px solid rgba(184,151,90,0.2);
+      padding-top: 16px;
+      width: 100%;
+    }
+
+    .offer-investment-row {
+      background: var(--slate);
+      border: 1px solid rgba(184, 151, 90, 0.15);
+      padding: 56px 64px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: center;
+      position: relative;
+    }
+
+    .offer-investment-row::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(184,151,90,0.4), transparent);
     }
 
-    .offer-price-label {
-      font-size: 12px;
-      letter-spacing: 0.16em;
+    .offer-invest-left {}
+
+    .offer-invest-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--silver);
-      margin-bottom: 16px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 500;
     }
 
-    .offer-price {
+    .offer-invest-value {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(52px, 8vw, 80px);
+      font-size: clamp(40px, 5vw, 60px);
       font-weight: 300;
       color: var(--cream);
       line-height: 1;
       margin-bottom: 8px;
     }
 
-    .offer-price sup {
-      font-size: 0.35em;
-      vertical-align: super;
-      color: var(--silver);
-    }
-
-    .offer-price-note {
+    .offer-invest-note {
       font-size: 13px;
       color: var(--silver);
-      margin-bottom: 48px;
+      line-height: 1.7;
     }
 
-    .offer-includes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 0 auto 48px;
-      max-width: 500px;
-      text-align: left;
+    .offer-invest-sep {
+      width: 1px;
+      height: 100px;
+      background: rgba(255,255,255,0.06);
+      margin: 0 64px;
     }
 
-    .offer-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 14px;
+    .offer-invest-right {}
+
+    .offer-invest-align {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
       color: var(--fog);
-      line-height: 1.6;
-    }
-
-    .offer-item::before {
-      content: '—';
-      color: var(--gold);
-      flex-shrink: 0;
-      margin-top: 1px;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
 
     .offer-cta {
@@ -697,13 +772,12 @@
       background: var(--gold);
       color: var(--ink);
       font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 22px 60px;
+      padding: 18px 40px;
       text-decoration: none;
-      margin-bottom: 24px;
       transition: all 0.3s ease;
     }
 
@@ -712,16 +786,11 @@
       transform: translateY(-1px);
     }
 
-    .offer-guarantee {
-      font-size: 13px;
-      color: var(--silver);
-      max-width: 420px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    .offer-guarantee strong {
-      color: var(--cream);
+    .offer-align-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(138, 151, 168, 0.7);
+      line-height: 1.7;
     }
 
     /* ── FAQ ── */
@@ -777,9 +846,9 @@
     }
 
     .faq-a {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--silver);
-      line-height: 1.9;
+      line-height: 1.95;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease, margin 0.3s ease;
@@ -889,7 +958,7 @@
 
     .transformation-cols {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 5fr 64px 7fr;
       gap: 0;
       align-items: stretch;
     }
@@ -999,7 +1068,7 @@
       align-items: flex-start;
       gap: 14px;
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.65;
     }
 
     .trans-item.before-item {
@@ -1110,9 +1179,9 @@
     }
 
     .problema-card p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--silver);
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     .problema-conclusion {
@@ -1193,8 +1262,8 @@
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.75;
     }
 
     .paraquem-item.sim {
@@ -1313,9 +1382,9 @@
     }
 
     .diferencial-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--silver);
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     /* ── RESPONSIVE ── */
@@ -1342,12 +1411,21 @@
         grid-template-columns: 1fr;
       }
 
-      .offer-card {
-        padding: 40px 28px;
+      .offer-process-grid {
+        grid-template-columns: 1fr;
+        margin: 0 16px 2px;
       }
 
-      .offer-includes {
+      .offer-investment-row {
         grid-template-columns: 1fr;
+        padding: 40px 28px;
+        gap: 32px;
+        margin: 0 16px;
+      }
+
+      .offer-invest-sep {
+        width: 60px;
+        height: 1px;
       }
 
       .method-detail {
@@ -1375,6 +1453,9 @@
 
       .trans-col {
         padding: 40px 28px;
+      }
+      .transformation-cols {
+        grid-template-columns: 1fr;
       }
 
       .problema-grid {
@@ -1406,7 +1487,7 @@
   <!-- ══ NAV ══════════════════════════════════════ -->
   <nav>
     <a href="#" class="nav-logo">FLUXUS</a>
-    <a href="#offer" class="nav-cta">Reservar uma vaga</a>
+    <a href="#contact" class="nav-cta">Solicitar uma conversa</a>
   </nav>
 
   <!-- ══ HERO ══════════════════════════════════════ -->
@@ -1414,18 +1495,18 @@
     <div class="hero-bg"></div>
     <div class="hero-noise"></div>
     <div class="container hero-content">
-      <div class="hero-tag eyebrow">Mentoria Individual</div>
+      <div class="hero-tag eyebrow">Mentoria Individual · FLUXUS</div>
       <h1 class="display hero-headline">
-        Organizar o caos<br>
-        <em>não é sobre controle.</em><br>
-        É sobre clareza.
+        Construiu<br>
+        a vida certa.<br>
+        <em>Para outra pessoa.</em>
       </h1>
       <p class="hero-sub">
-        Para quem construiu algo relevante e perdeu o fio de si mesmo no processo. Para quem sente que a mente nunca desliga e está pronto para mudar isso de verdade.
+        Para executivos e empreendedores que chegaram onde planejaram e perceberam, num momento silencioso, que não estão dentro da própria vida. Este trabalho não é sobre produzir mais. É sobre voltar a ser quem você é.
       </p>
       <div class="hero-actions">
-        <a href="#offer" class="btn-primary" style="box-shadow: 0 0 20px rgba(184, 151, 90, 0.2);">Ver condição disponível</a>
-        <span class="hero-note" style="color: var(--gold-light);">12 sessões ·  por 12x de R$ 997</span>
+        <a href="#contact" class="btn-primary" style="box-shadow: 0 0 20px rgba(184, 151, 90, 0.2);">Solicitar uma conversa inicial</a>
+        <span class="hero-note" style="color: var(--gold-light);">Processo individual · Vagas limitadas · Sigiloso</span>
       </div>
     </div>
   </section>
@@ -1443,15 +1524,10 @@
         <div class="trans-col before">
           <div class="trans-label before-label">Como você chega</div>
           <ul class="trans-items">
-            <li class="trans-item before-item"><span class="trans-dot"></span>Exausto, sem energia para o que importa
-            </li>
-            <li class="trans-item before-item"><span class="trans-dot"></span>Confuso, muitas vozes, nenhuma direção
-            </li>
-            <li class="trans-item before-item"><span class="trans-dot"></span>Sem gestão, time à deriva, você resolvendo
-              tudo</li>
-            <li class="trans-item before-item"><span class="trans-dot"></span>Desmotivado, mesmo com resultados</li>
-            <li class="trans-item before-item"><span class="trans-dot"></span>Sem plano real, só urgências</li>
-            <li class="trans-item before-item"><span class="trans-dot"></span>Sem estratégia, agindo por instinto</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Mais anos de experiência. Menos clareza do que antes.</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Em todas as reuniões. Presente em nenhuma.</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>Os marcos foram atingidos. O que deveria vir junto, não veio.</li>
+            <li class="trans-item before-item"><span class="trans-dot"></span>A agenda cheia. A direção, vaga.</li>
           </ul>
         </div>
         <div class="trans-arrow">
@@ -1460,11 +1536,13 @@
         <div class="trans-col after">
           <div class="trans-label after-label">Como você sai</div>
           <ul class="trans-items">
-            <li class="trans-item after-item"><span class="trans-dot"></span>Seguro, com uma bússola interna clara</li>
-            <li class="trans-item after-item"><span class="trans-dot"></span>Com clareza sobre quem é e para onde vai</li>
-            <li class="trans-item after-item"><span class="trans-dot"></span>Com estrutura que sustenta crescimento sem te consumir</li>
-            <li class="trans-item after-item"><span class="trans-dot"></span>Tomando decisões, não apenas gerenciando urgências</li>
-            <li class="trans-item after-item"><span class="trans-dot"></span>Liderando a partir de dentro, não da exaustão</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Com uma referência interna clara. Que não oscila quando o contexto muda.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Decidindo a partir de si mesmo. Não da pressão, não da inércia, não da aprovação de ninguém.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Sabendo quem você é fora do cargo. E liderando melhor dentro dele por isso.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Presente de verdade nas relações que importam. Não só fisicamente, mas de fato.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Com clareza sobre o que quer construir agora. Para si. Não para o currículo.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Dentro da própria vida. Não como espectador dela.</li>
+            <li class="trans-item after-item"><span class="trans-dot"></span>Com o tipo de leveza que não depende de nada externo estar certo para existir.</li>
           </ul>
         </div>
       </div>
@@ -1476,40 +1554,39 @@
     <div class="container-wide">
       <div class="symptoms-intro reveal">
         <p class="eyebrow">A dor que poucos nomeiam</p>
-        <h2 class="display">Quando a mente está<br><em>pedindo para parar</em></h2>
-        <p>Raramente aparece como "desconexão". Aparece como cansaço, conflito, procrastinação ou simplesmente sensação
-          de vazio.</p>
+        <h2 class="display">Não está na planilha.<br><em>Está no domingo à noite.</em></h2>
+        <p>A dor desse perfil raramente tem nome. Aparece como cansaço sem motivo, como decisões que travam, como a sensação persistente de estar fora de si mesmo sem conseguir explicar para ninguém.</p>
       </div>
       <div class="symptoms-grid">
         <div class="symptom-card reveal">
           <div class="symptom-number">01</div>
-          <h3>Algo está errado mas você não sabe nomear</h3>
-          <p>A sensação existe. Só não tem palavra. E sem nome, não tem saída.</p>
+          <h3>Os resultados chegaram. A sensação de que deveriam bastar, não.</h3>
+          <p>Os marcos foram atingidos. O reconhecimento existe. Mas nenhum deles trouxe o que você esperava que trouxesse. E você não consegue dizer isso para ninguém.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">02</div>
-          <h3>Agenda cheia, direção zero</h3>
-          <p>Foco que some quando você mais precisa. Você age por inércia, não por escolha.</p>
+          <h3>Você tem mais experiência do que nunca. E decide com menos clareza do que antes.</h3>
+          <p>Não falta informação. Falta um ponto de vista que seja genuinamente seu. A clareza interna foi a primeira coisa que o crescimento foi consumindo, em silêncio.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">03</div>
-          <h3>Impulsos que sabotam</h3>
-          <p>Reações que comprometem relações e decisões. Você sabe que não deveria e repete.</p>
+          <h3>Você está em todas as reuniões. Em nenhum momento.</h3>
+          <p>Para o time, para os sócios, para a família. Mas quando o silêncio chega, você percebe que está observando a própria vida de fora. Como espectador de algo que deveria ser seu.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">04</div>
-          <h3>Ansiedade como modo padrão</h3>
-          <p>Excesso de pensamentos, dificuldade de silenciar. O barulho interno nunca para.</p>
+          <h3>Quando perguntam quem você é, você responde com o que faz.</h3>
+          <p>A identidade foi se fundindo com o cargo ou com a empresa. O que existe por baixo disso ficou sem resposta há tempo demais. E essa pergunta pesa mais a cada ano.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">05</div>
-          <h3>Distância de si mesmo</h3>
-          <p>Você não reconhece quem é fora do papel que representa. O vazio dói.</p>
+          <h3>O que parece disciplina pode ser outra coisa.</h3>
+          <p>A preocupação constante com não errar. A dificuldade de parar sem culpa. O corpo pedindo descanso enquanto a mente recusa. Disciplina e fuga têm aparências muito parecidas.</p>
         </div>
         <div class="symptom-card reveal">
           <div class="symptom-number">06</div>
-          <h3>Muito esforço, pouca transformação</h3>
-          <p>Estagnação disfarçada de movimento. Os números batem. Mas algo essencial está fora do lugar.</p>
+          <h3>A agenda nunca está vazia. A direção, às vezes, sim.</h3>
+          <p>As reuniões acontecem. Os projetos avançam. Os números batem. Mas a pergunta sobre para onde tudo isso leva você, não a empresa, não tem uma resposta que sustente.</p>
         </div>
       </div>
     </div>
@@ -1519,9 +1596,9 @@
   <div class="quote-break">
     <div class="container">
       <blockquote class="reveal" style="color: var(--gold-light);">
-        "Clareza não é ausência de complexidade.<br>É saber o que fazer com ela."
+        "Você aprendeu a ser muito bom no que faz.<br>Foi esquecendo quem é."
       </blockquote>
-      <cite class="reveal">— Premissa da Clareza Radical</cite>
+      <cite class="reveal">Fluxus</cite>
     </div>
   </div>
 
@@ -1531,29 +1608,26 @@
   <section id="problema">
     <div class="container-wide">
       <div class="problema-header reveal">
-        <p class="eyebrow">Por que outras soluções não funcionaram</p>
-        <h2 class="display">A maioria investe em mudar<br><em>o que faz.</em> Não o que é.</h2>
-        <p>Cada solução toca em uma parte do problema.</p>
+        <p class="eyebrow">Por que outras tentativas não chegaram ao centro</p>
+        <h2 class="display">Cada solução olhou<br><em>para o lugar errado.</em></h2>
+        <p>Não foi falta de qualidade. Foi falta de profundidade. O problema real não estava onde as soluções procuravam.</p>
       </div>
       <div class="problema-grid">
         <div class="problema-card reveal" data-label="01">
-          <h3>Cursos e conteúdos</h3>
-          <p>Informação sem aplicação. Você aprende, consume, esquece. Falta acompanhamento do processo real e alguém
-            que veja você.</p>
+          <h3>Coaching executivo</h3>
+          <p>Trabalha comportamento e metas. Não toca o que está por baixo do comportamento: os padrões identitários que determinam como você decide, lidera e se relaciona.</p>
         </div>
         <div class="problema-card reveal" data-label="02">
           <h3>Terapia tradicional</h3>
-          <p>Foco no passado e no diagnóstico. Não gera, necessariamente, clareza de direção ou capacidade de agir
-            diferente no presente.</p>
+          <p>Aprofunda o passado com competência. Mas não necessariamente gera direção para o presente. O ritmo não acompanha quem precisa se mover enquanto se entende.</p>
         </div>
         <div class="problema-card reveal" data-label="03">
-          <h3>Coaching executivo</h3>
-          <p>Metas e performance em primeiro plano. Não toca as camadas emocionais e identitárias que, na prática,
-            travam o avanço real.</p>
+          <h3>Consultorias e mentorias de negócio</h3>
+          <p>Trabalham a empresa. Mas quando o que está travando é quem conduz, nenhuma estratégia externa resolve o que é, na raiz, uma questão de identidade.</p>
         </div>
       </div>
       <div class="problema-conclusion reveal">
-        <p>Nós invertemos essa lógica. <strong>Quem você é vem antes do que você faz.</strong></p>
+        <p>A Fluxus trabalha onde nenhuma das outras chegou: <strong>em quem você é quando ninguém está olhando. É dali que tudo o que você decide parte.</strong></p>
       </div>
     </div>
   </section>
@@ -1573,17 +1647,16 @@
           <p class="eyebrow reveal">O Mentor</p>
           <h2 class="display reveal">Santiago Ligorio</h2>
           <p class="reveal">
-            <strong>Passei +10 anos dentro de empresas que cresciam rápido demais para se entender.</strong> Vi líderes
-            competentes implodindo não por falta de capacidade, mas por excesso de tudo e ausência de um lugar seguro
-            para pensar com clareza.
+            <strong>Fundei a primeira empresa júnior de blockchain da América Latina.</strong> Fui presidente, CPO, advisor e head em startups, ventures e DAOs ao longo de anos construindo em alguns dos ambientes mais acelerados e exigentes que existiam.
           </p>
           <p class="reveal">
-            Hoje trabalho com empresários e executivos que construíram coisas relevantes, mas que perderam o fio de si
-            mesmos no processo. Não ensino métodos de produtividade. <strong>Ajudo pessoas a encontrarem a sua própria
-              lógica interna</strong> e a operarem a partir dela.
+            Em cada um desses ambientes, vi o mesmo padrão nas pessoas que lideravam. Competência alta. Entrega consistente. E uma desconexão silenciosa que nenhum resultado conseguia resolver. Não era fraqueza. Era o custo invisível de construir muito sem parar para entender quem construía.
           </p>
           <p class="reveal">
-            Mais de 300 horas de processo individual com fundadores, CEOs e líderes de alta performance. <strong>Cada uma delas aconteceu no único lugar onde mudança real começa, dentro.</strong>
+            Essa observação, repetida por anos em contextos diferentes, se tornou uma pergunta que não saía: <strong>onde existe um espaço seguro para o líder, não para a liderança?</strong> Criei a Fluxus para ser esse espaço.
+          </p>
+          <p class="reveal">
+            Mais de 300 horas de processo individual com fundadores, CEOs e líderes de alta performance. <strong>Cada sessão aconteceu no único nível onde mudança real começa: em quem conduz.</strong>
           </p>
         </div>
       </div>
@@ -1596,28 +1669,26 @@
       <div class="method-header reveal">
         <p class="eyebrow">O Método</p>
         <h2 class="display">12 sessões.<br><em>Uma direção.</em></h2>
-        <p>Não é terapia. Não é coaching motivacional. É um processo que vai fundo no que está travando você e te devolve com uma direção que é sua.</p>
+        <p>Não é terapia. Não é coaching de performance. É um processo que opera onde as outras abordagens não chegaram: em quem você é e em como isso determina tudo que você decide.</p>
       </div>
       <div class="method-phases">
         <div class="phase reveal">
-          <div class="phase-label">Fase 1</div>
-          <h3>Diagnóstico do Caos</h3>
-          <p>Mapeamos o que está ocupando espaço na sua mente, nas suas decisões e na sua rotina. Sem julgamento. Com
-            precisão.</p>
-          <div class="phase-sessions">Sessões 1 a 4</div>
+          <div class="phase-num">01</div>
+          <h3>O que está ocupando espaço</h3>
+          <p>Mapeamos o que está pesando na sua mente, nas suas decisões e na sua rotina. Sem agenda. Sem julgamento. Com precisão e escuta total.</p>
+          <div class="phase-sessions">Sessões 1 a 4 · Diagnóstico</div>
         </div>
         <div class="phase reveal">
-          <div class="phase-label">Fase 2</div>
-          <h3>Estrutura Interna</h3>
-          <p>Identificamos seus padrões de pensamento, seus gatilhos e os mecanismos que travam sua clareza quando você
-            mais precisa dela.</p>
-          <div class="phase-sessions">Sessões 5 a 8</div>
+          <div class="phase-num">02</div>
+          <h3>De onde vêm seus padrões</h3>
+          <p>Identificamos os mecanismos que travam sua clareza quando você mais precisa dela. Os gatilhos, as crenças e o que opera em você sem que você perceba.</p>
+          <div class="phase-sessions">Sessões 5 a 8 · Estrutura interna</div>
         </div>
         <div class="phase reveal">
-          <div class="phase-label">Fase 3</div>
-          <h3>Direção Real</h3>
-          <p>Você sai com uma bússola própria. Não um plano de ação, um ponto de vista claro sobre quem você é e para onde vai.</p>
-          <div class="phase-sessions">Sessões 9 a 12</div>
+          <div class="phase-num">03</div>
+          <h3>Uma direção que é sua</h3>
+          <p>Você sai com uma bússola própria. Não um plano de ação externo. Um ponto de vista claro sobre quem você é e de onde quer operar a partir de agora.</p>
+          <div class="phase-sessions">Sessões 9 a 12 · Direção real</div>
         </div>
       </div>
       <div class="method-detail reveal">
@@ -1632,9 +1703,7 @@
         </div>
         <div class="method-sep"></div>
         <div class="method-desc">
-          <strong>Cada sessão tem intenção e estrutura mas não roteiro padrão.</strong> O que surge é genuíno, e é a
-          partir
-          do genuíno que o trabalho real começa. Você recebe preparação prévia para cada encontro e síntese escrita ao
+          <strong>Cada sessão tem intenção e estrutura mas não roteiro padrão.</strong> O que emerge em cada sessão é genuíno. É a partir do genuíno que o trabalho real acontece. Você recebe preparação prévia para cada encontro e síntese escrita ao
           final. O processo é individual, sigiloso e sem nenhuma agenda além da sua clareza.
         </div>
       </div>
@@ -1652,23 +1721,21 @@
         <div class="paraquem-block reveal">
           <h3 class="display sim">É para você se...</h3>
           <ul class="paraquem-list">
-            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Sente que está existindo mais do que vivendo</li>
-            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Toma decisões, mas raramente com clareza real</li>
-            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Sabe que algo precisa mudar, mas não consegue nomear o quê</li>
-            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Já tentou outras abordagens e ainda sente que falta o essencial</li>
-            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Quer mudança que dure, não motivação que passa</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Você construiu uma carreira sólida ou uma empresa real e sente que, no caminho, perdeu o fio de si mesmo</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Os resultados chegaram. A sensação de que deveriam ser suficientes, não.</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Você decide o tempo todo, mas raramente com a clareza que sabe que é capaz de ter</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Sente que sua identidade ficou colada ao cargo ou à empresa. E que há pouco de você por baixo disso.</li>
+            <li class="paraquem-item sim"><span class="pq-icon sim">✦</span>Já tentou outras abordagens. Funcionaram em parte. O centro do problema continuou intocado.</li>
           </ul>
         </div>
         <div class="paraquem-sep"></div>
         <div class="paraquem-block reveal">
           <h3 class="display nao">Não é para você se...</h3>
           <ul class="paraquem-list">
-            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Busca técnicas rápidas sem comprometimento
-              com o processo</li>
-            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Não está disposto a olhar honestamente para
-              si mesmo</li>
-            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Quer respostas prontas em vez de construir
-              as suas</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Busca um método de produtividade, um framework de gestão ou um plano de 90 dias</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Não está disposto a examinar com honestidade os próprios padrões</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Quer respostas prontas em vez de construir as que são genuinamente suas</li>
+            <li class="paraquem-item nao"><span class="pq-icon nao">×</span>Procura motivação de curto prazo. Aqui não existe isso.</li>
           </ul>
         </div>
       </div>
@@ -1703,19 +1770,18 @@
       <div class="diferenciais-row reveal">
         <div class="diferencial-card">
           <div class="dif-icon">01</div>
-          <h4>Resultado duradouro</h4>
-          <p>Mentorados relatam mudanças que continuam meses após o encerramento. Não é efeito passageiro nem motivação
-            de curto prazo.</p>
+          <h4>O resultado não passa</h4>
+          <p>Participantes relatam mudanças reais meses após o encerramento. Não é clareza de momento. É uma referência interna que continua operando quando o contexto muda.</p>
         </div>
         <div class="diferencial-card">
           <div class="dif-icon">02</div>
-          <h4>Interior e exterior, juntos</h4>
-          <p>O processo integra o emocional, o identitário e o existencial sem perder o foco em resultados concretos. Clareza interna produz ação externa.</p>
+          <h4>Não existe roteiro fixo</h4>
+          <p>O processo se constrói a partir do que você é e do que vai emergindo. Não há módulos, fases obrigatórias nem conteúdo aplicado a todos. Cada jornada é única porque cada pessoa é.</p>
         </div>
         <div class="diferencial-card">
           <div class="dif-icon">03</div>
-          <h4>Quem passa, indica</h4>
-          <p>Todos os participantes já indicaram a mentoria espontaneamente, antes mesmo de qualquer solicitação. O resultado fala por si.</p>
+          <h4>Quem passou, indicou</h4>
+          <p>Todos os participantes indicaram o processo antes mesmo de serem solicitados. Resultado real não precisa de argumento. Ele se propaga.</p>
         </div>
       </div>
     </div>
@@ -1725,34 +1791,14 @@
   <section id="testimonials">
     <div class="container-wide">
       <div class="testi-header reveal">
-        <p class="eyebrow">Quem já fez</p>
-        <h2 class="display">O que muda<br><em>quando a névoa baixa</em></h2>
+        <p class="eyebrow">Resultados reais</p>
+        <h2 class="display">O que muda<br><em>em quem decide ir fundo</em></h2>
       </div>
+
       <div class="testi-grid">
         <div class="testi-card reveal">
           <div class="testi-quote">
-            "Eu precisava de alguém que conseguisse entender o caos absoluto que eu sou sem querer me consertar, só me
-            ajudar a entender. Esse processo me devolveu algo que eu nem sabia que tinha perdido."
-          </div>
-          <div class="testi-author">
-            <div class="testi-name">Ricardo A.</div>
-            <div class="testi-role">Fundador · Empresa de Tecnologia B2B</div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-quote">
-            "Não esperava sentir a alma de novo no trabalho. Achei que era só fadiga, que passaria. Mas era algo mais
-            profundo e o trabalho que fizemos nas sessões foi o único lugar onde eu consegui chegar até isso."
-          </div>
-          <div class="testi-author">
-            <div class="testi-name">Fernanda L.</div>
-            <div class="testi-role">CEO · Grupo de Varejo com 3 unidades</div>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-quote">
-            "Saí das 12 sessões sem uma lista de coisas para fazer. Saí sabendo quem eu sou quando estou no meu melhor
-            e essa referência mudou tudo na forma como decido e lidero."
+            "Saí das 12 sessões sem uma lista de coisas para fazer. Saí sabendo quem eu sou quando estou no meu melhor e essa referência mudou tudo na forma como decido e lidero."
           </div>
           <div class="testi-author">
             <div class="testi-name">Marcelo T.</div>
@@ -1761,70 +1807,109 @@
         </div>
         <div class="testi-card reveal">
           <div class="testi-quote">
-            "Me vi em um dos momentos mais consistentes da minha vida pessoal e artística. A forma como o Santiago
-            acolhe, reorganiza e conduz o processo com precisão me ajudou a sair de ciclos confusos e seguir com mais
-            clareza e firmeza o meu caminho."
+            "Não esperava sentir a alma de novo no trabalho. Achei que era só fadiga, que passaria. Mas era algo mais profundo e o trabalho que fizemos nas sessões foi o único lugar onde eu consegui chegar até isso."
           </div>
           <div class="testi-author">
-            <div class="testi-name">Shu A.</div>
-            <div class="testi-role">Fundador · DJ e Produtor</div>
+            <div class="testi-name">Fernanda L.</div>
+            <div class="testi-role">CEO · Grupo de Varejo</div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="testi-quote">
-            "Conversar com o Santiago me faz respirar. No meio do turbilhão de ideias que tenho o tempo todo, ele me
-            ajuda a organizar, priorizar e enxergar o que realmente importa e isso muda tudo."
+            "Precisava de alguém que entendesse o caos que eu sou sem querer me consertar. Só me ajudar a entender. Esse processo me devolveu algo que eu nem sabia que tinha perdido."
           </div>
           <div class="testi-author">
-            <div class="testi-name">Vee S.</div>
-            <div class="testi-role">Fundador · Agência de Marketing</div>
+            <div class="testi-name">Ricardo A.</div>
+            <div class="testi-role">Fundador · Empresa de Tecnologia B2B</div>
           </div>
         </div>
         <div class="testi-card reveal">
           <div class="testi-quote">
-            "Foi um espaço de coragem, onde pude me enxergar com profundidade e verdade. Com entrega, organização e
-            novos olhares, vivi transformações reais e encontrei força para construir um lar dentro de mim. Um movimento
-            que reverbera no dia a dia."
+            "Foi um espaço de coragem, onde pude me enxergar com profundidade e verdade. Vivi transformações reais e encontrei força para construir um lar dentro de mim. Um movimento que reverbera no dia a dia."
           </div>
           <div class="testi-author">
             <div class="testi-name">Diogo A.</div>
             <div class="testi-role">Advogado</div>
           </div>
         </div>
-
+        <div class="testi-card reveal">
+          <div class="testi-quote">
+            "A forma como o Santiago acolhe, reorganiza e conduz o processo com precisão me ajudou a sair de ciclos confusos e seguir com mais clareza e firmeza. Um dos momentos mais consistentes da minha vida."
+          </div>
+          <div class="testi-author">
+            <div class="testi-name">Shu A.</div>
+            <div class="testi-role">Fundador · Produtor</div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">
+            "No meio do turbilhão de ideias que tenho o tempo todo, ele me ajuda a organizar, priorizar e enxergar o que realmente importa. Isso muda tudo."
+          </div>
+          <div class="testi-author">
+            <div class="testi-name">Vee S.</div>
+            <div class="testi-role">Fundador · Agência de Marketing</div>
+          </div>
+        </div>
       </div>
+
+      <p style="text-align:center; font-size: 12px; color: var(--silver); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 40px; opacity: 0.6;">
+        Estes são alguns dos participantes do processo.
+      </p>
     </div>
   </section>
 
   <!-- ══ OFFER ══════════════════════════════════ -->
   <section id="offer">
-    <div class="offer-wrap">
-      <div class="offer-header reveal">
-        <p class="eyebrow">Janela de Oportunidade</p>
-        <h2 class="display">Uma condição rara.<br><em>Feita para quem decide hoje.</em></h2>
+    <div class="offer-wrap" style="max-width: 1100px;">
+      <div class="offer-header reveal" style="max-width: 780px; margin: 0 auto 72px; padding: 0 32px;">
+        <p class="eyebrow">O Processo</p>
+        <h2 class="display">12 sessões.<br><em>Uma direção que é sua.</em></h2>
+        <p style="font-size: 16px; color: var(--silver); margin-top: 20px; line-height: 1.85;">
+          Não é um programa com módulos fixos. É um processo construído a partir de você,
+          do seu momento, dos seus padrões e do que vai emergindo ao longo dos encontros.
+        </p>
       </div>
-      <div class="offer-card reveal" style="border-color: var(--gold); box-shadow: 0 0 40px rgba(184, 151, 90, 0.1);">
-        <div class="offer-price-label" style="color: var(--gold); text-shadow: 0 0 10px rgba(184, 151, 90, 0.2);">
-          O MOMENTO É O AGORA</div>
-        <div class="offer-price-note" style="margin-bottom: 8px; margin-top: -8px;"><span
-            style="text-decoration: line-through; opacity: 0.6; font-size: 16px;">De R$ 12.000,00</span></div>
-        <div class="offer-price">12x R$997</div>
-        <div class="offer-includes">
-          <div class="offer-item">12 sessões individuais de 2h</div>
-          <div class="offer-item">Preparação escrita para cada encontro</div>
-          <div class="offer-item">Resolutivas estruturadas ao final de cada sessão</div>
-          <div class="offer-item">Acesso direto ao mentor entre sessões</div>
-          <div class="offer-item">Material de referência personalizado</div>
-          <div class="offer-item">Privacidade absoluta e espaço sem agenda</div>
+
+      <div class="offer-process-grid reveal" style="margin: 0 32px 2px;">
+        <div class="offer-process-card">
+          <div class="offer-process-num">01</div>
+          <div class="offer-process-title">O que está travando você</div>
+          <p class="offer-process-body">Mapeamos o que está pesando na sua mente, nas suas decisões e na sua rotina. Sem agenda prévia. Com precisão e escuta total.</p>
+          <span class="offer-process-tag">Sessões 1 a 4 · Diagnóstico</span>
         </div>
-        <a href="https://app.pipefy.com/public/form/p3PPMU0u" class="offer-cta" target="_blank"
-          rel="noopener noreferrer">
-          Garantir minha vaga
-        </a>
-        <div class="offer-guarantee">
-          <strong>Garantia incondicional.</strong><br>
-          Se após a 1ª sessão você sentir que o processo não é para você, devolvemos 100% do valor sem burocracia, sem
-          questionamentos. Risco zero para a sua transformação.
+        <div class="offer-process-card">
+          <div class="offer-process-num">02</div>
+          <div class="offer-process-title">De onde vêm seus padrões</div>
+          <p class="offer-process-body">Identificamos os mecanismos que consomem sua clareza quando você mais precisa dela. Os gatilhos, as crenças e o que opera em você sem que perceba.</p>
+          <span class="offer-process-tag">Sessões 5 a 8 · Estrutura interna</span>
+        </div>
+        <div class="offer-process-card">
+          <div class="offer-process-num">03</div>
+          <div class="offer-process-title">Uma direção que é sua</div>
+          <p class="offer-process-body">Você sai com uma bússola própria. Não um plano de ação externo. Um ponto de vista claro sobre quem você é e de onde quer operar a partir de agora.</p>
+          <span class="offer-process-tag">Sessões 9 a 12 · Direção real</span>
+        </div>
+      </div>
+
+      <div class="offer-investment-row reveal" style="margin: 0 32px;">
+        <div class="offer-invest-left">
+          <div class="offer-invest-label">Investimento</div>
+          <div class="offer-invest-value">R$ 12.000</div>
+          <p class="offer-invest-note">
+            Ciclo completo de 12 sessões individuais.<br>
+            Parcelamento disponível mediante consulta.<br>
+            Processo sigiloso e sem nenhuma agenda além da sua.
+          </p>
+        </div>
+        <div class="offer-invest-sep"></div>
+        <div class="offer-invest-right">
+          <p class="offer-invest-align">
+            O processo começa com uma conversa de 30 minutos. Sem pitch e sem pressão. Para avaliar juntos se o que você precisa é o que este processo oferece. Se não houver alinhamento, encerramos ali. Sem custo. Sem explicação necessária.
+          </p>
+          <a href="https://calendar.notion.so/meet/santiagoligorio/aqnl4p11" class="offer-cta" target="_blank" rel="noopener noreferrer">
+            Solicitar uma conversa inicial
+          </a>
+          <p class="offer-align-note">30 minutos · sem custo · sem compromisso de nenhuma das partes</p>
         </div>
       </div>
     </div>
@@ -1843,67 +1928,55 @@
             Como funcionam as sessões?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">As sessões são individuais, conduzidas por videoconferência ou presencialmente (a
-            combinar). Cada sessão tem 2 horas, com uma pauta prévia enviada antes do encontro e uma síntese escrita
-            entregue até 24h depois. A frequência padrão é quinzenal o espaço entre as sessões faz parte do processo.
-          </div>
+          <div class="faq-a">As sessões são individuais, conduzidas por videoconferência ou presencialmente, a combinar. Cada encontro tem 2 horas, com uma pauta prévia enviada antes e uma síntese escrita entregue em até 24 horas. A frequência é semanal. O espaço entre os encontros é parte do processo: é onde o que foi trabalhado se instala na rotina.</div>
         </div>
         <div class="faq-item reveal" onclick="toggleFaq(this)">
           <div class="faq-q">
             Isso é terapia?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Não. A Clareza Radical não é um processo terapêutico e não substitui acompanhamento
-            clínico. É um trabalho de mentoria focado em cognição, decisão e direção. Trabalhamos com o que está
-            acontecendo agora no negócio, na liderança, na rotina e com o que está impedindo você de pensar e agir
-            com mais clareza.</div>
+          <div class="faq-a">Não. A Fluxus não é um processo terapêutico e não substitui acompanhamento clínico quando necessário. É uma mentoria individual focada em identidade, clareza de direção e reconexão com si mesmo. Trabalhamos com o que está acontecendo agora, o que está travando suas decisões e o que está impedindo você de operar no seu melhor.</div>
         </div>
         <div class="faq-item reveal" onclick="toggleFaq(this)">
           <div class="faq-q">
             Para quem não é?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Este processo não é para quem busca receitas prontas, scripts de produtividade ou motivação
-            de curto prazo. Se você espera sair com um plano de 90 dias detalhado, essa não é a mentoria certa. O que
-            entregamos é algo mais fundamental e mais duradouro.</div>
+          <div class="faq-a">Este processo não é para quem busca métodos de gestão, scripts de produtividade ou motivação de curto prazo. Se a expectativa é sair com um plano de 90 dias ou um framework de liderança, esta não é a mentoria certa. O que acontece aqui é mais fundamental e mais duradouro do que qualquer ferramenta.</div>
         </div>
         <div class="faq-item reveal" onclick="toggleFaq(this)">
           <div class="faq-q">
-            Como funciona a garantia?
+            Como funciona a conversa inicial?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Você tem 1 sessão para avaliar se o processo faz sentido para você. Se decidir
-            que não é o momento ou que o método não se aplica ao seu contexto, devolvemos 100% do investimento sem
-            formulários, sem justificativas necessárias. Funciona porque o processo precisa ser uma escolha real para
-            funcionar.</div>
+          <div class="faq-a">São 30 minutos. Sem pitch, sem apresentação e sem pressão de nenhuma das partes. Você descreve o seu momento. Eu descrevo o processo. Juntos, avaliamos se há alinhamento real: se o que você precisa é o que este processo oferece e se o que este processo exige é o que você está disposto a trazer. O processo é individual e há um número limitado de pessoas que podem estar nele ao mesmo tempo. Essa conversa existe para garantir que o espaço vai para quem vai aproveitá-lo de verdade.</div>
         </div>
         <div class="faq-item reveal" onclick="toggleFaq(this)">
           <div class="faq-q">
             Quais são os próximos passos?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Clique em "Quero começar", envie seu contato e agendamos uma conversa de 30 minutos sem
-            compromisso. Nessa conversa, avaliamos juntos se há alinhamento dos dois lados. Se sim, definimos as datas
-            e iniciamos. Simples assim.</div>
+          <div class="faq-a">Clique em qualquer um dos botões desta página e acesse diretamente a agenda para escolher o melhor horário. Após a conversa de alinhamento, se houver fit dos dois lados, você recebe as informações de investimento e parcelamento e definimos juntos a data de início. Do primeiro clique ao início do processo, o caminho é simples e direto.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <div id="contact"></div>
   <!-- ══ FINAL CTA ══════════════════════════════ -->
   <section id="final-cta">
     <div class="container final-cta-content">
-      <p class="eyebrow reveal">Pronto para começar?</p>
-      <h2 class="display reveal">Você não precisa<br>de mais informação.<br><em>Precisa de clareza.</em></h2>
+      <p class="eyebrow reveal">O próximo passo</p>
+      <h2 class="display reveal">Você não chegou até aqui<br>por acaso.<br><em>E já sabe disso.</em></h2>
       <a href="https://calendar.notion.so/meet/santiagoligorio/aqnl4p11" class="btn-primary reveal" target="_blank"
-        rel="noopener noreferrer">Conversar sobre minha vaga</a>
+        rel="noopener noreferrer">Solicitar uma conversa inicial</a>
     </div>
   </section>
 
   <!-- ══ FOOTER ══════════════════════════════════ -->
   <footer>
     <p>© 2026 FLUXUS · Todos os direitos reservados</p>
-    <p>Mentoria individual · Processo sigiloso · Vagas limitadas</p>
+    <p>Mentoria individual · Processo sigiloso · Confidencialidade total</p>
   </footer>
 
   <script>
